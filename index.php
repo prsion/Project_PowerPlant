@@ -123,10 +123,16 @@ class PowerPlant implements PowerPlantInterface {
 		echo 'method setPower class =  '.__CLASS__.' is '. $this->power=$power ;
 	}
 
+		/**	magic method allow get value of $power  */
+	public function __toString() {
+		return "value of power in  ". get_class($this). "  is: {$this->power}\n";
+}
+
 };
 
 /**	child classes PowerPlant */
 class PowerPlant_111 extends PowerPlant{
+	public $power= "No";
 
 	public function	switchOnPower(){
 		echo 'PowerPlants_111 switch_On Electricity';
@@ -138,12 +144,16 @@ class PowerPlant_111 extends PowerPlant{
 
 class PowerPlant_222 extends PowerPlant{
 
+	public $power= "Yes";
+
 	public function	switchOnPower(){
+
 		echo 'PowerPlants_222 switch_On Electricity';
 	}
 	public function	switchOffPower(){
 		echo 'PowerPlants_222 switch_Off Electricity';
 	}
+	
 };
 
 
@@ -155,10 +165,26 @@ $PowerPlant0= new PowerPlant;
 $PowerPlant1= new PowerPlant_111;
 $PowerPlant2= new PowerPlant_222;
 
+
+$mass = array($PowerPlant0, $PowerPlant1, $PowerPlant2);
+
+foreach ($mass as $key) {
+	echo '<br>';
+	echo $key;
+}
+
+
+
+
+
+
+
 /** create any new  Household  */
 $Household= new Household;
 
 /** create any new  World  */
+
+/*
 $world0 = new World($PowerPlant0, $Household );
 $world1 = new World($PowerPlant1,$Household);
 echo $world0->StartPowerPlant();
@@ -178,3 +204,4 @@ echo '<br>';
 echo $PowerPlant1->getPower();
 echo '<br>';
 echo  $PowerPlant1->setPower('No');
+*/
