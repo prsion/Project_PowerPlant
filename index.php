@@ -166,25 +166,26 @@ $PowerPlant1= new PowerPlant_111;
 $PowerPlant2= new PowerPlant_222;
 
 
-$mass = array($PowerPlant0, $PowerPlant1, $PowerPlant2);
 
+
+/** create any new  Household  */
+$Household= new Household;
+
+
+$mass = array($PowerPlant0, $PowerPlant1, $PowerPlant2);
 foreach ($mass as $key) {
 	echo '<br>';
 	echo $key;
 }
 
 
-
-
-
-
-
-/** create any new  Household  */
-$Household= new Household;
-
 /** create any new  World  */
-
-/*
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo  'examples works of the some methods ';
+echo '<br>';
+echo '<br>';
 $world0 = new World($PowerPlant0, $Household );
 $world1 = new World($PowerPlant1,$Household);
 echo $world0->StartPowerPlant();
@@ -204,4 +205,3 @@ echo '<br>';
 echo $PowerPlant1->getPower();
 echo '<br>';
 echo  $PowerPlant1->setPower('No');
-*/
